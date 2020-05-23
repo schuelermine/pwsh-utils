@@ -11,6 +11,12 @@ The array to iterate through.
 The script block that is executed for each item in the array.
 User $_ to refer to the current item and $i to refer to that item's index.
 
+.INPUTS
+None
+
+.OUTPUTS
+Whatever the supplied script block outputs.
+
 .EXAMPLE
 > for+ ((1,2),(3,4)) {$_[$i]}
 1
@@ -29,6 +35,9 @@ b
 c
 d
 e
+
+.LINK
+https://github.com/schuelermine/pwsh-utils
 #>
 
 function For+ {    
