@@ -91,7 +91,7 @@ function For+ {
         
         [Alias("Item", "x")]
         [PSDefaultValue(
-            Help = "x"
+            Help = "x",
             Value = "x"
         )]
         [Parameter(
@@ -102,7 +102,7 @@ function For+ {
         
         [Alias("Index", "i")]
         [PSDefaultValue(
-            Help = "i"
+            Help = "i",
             Value = "i"
         )]
         [Parameter(
