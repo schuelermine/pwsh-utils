@@ -25,7 +25,7 @@ None
 .OUTPUTS
 Whatever the supplied script block outputs.
 
-.EXAMPLE Basic functionality
+.EXAMPLE
 > for+ (1..5) {$x - 1}
 0
 1
@@ -33,18 +33,18 @@ Whatever the supplied script block outputs.
 3
 4
 
-.EXAMPLE Using the index variable
+.EXAMPLE
 > for+ ('a'..'c') {"$x" * $i}
 
 b
 cc
 
-.EXAMPLE Using the index variable to index into an array
+.EXAMPLE
 > for+ ((1,2),(3,4)) {$x[$i]}
 1
 4
 
-.EXAMPLE Using the index variable to index into an array
+.EXAMPLE
 > for+ (,('a'..'e')*5) {$x[$i]}
 a
 b
@@ -52,13 +52,13 @@ c
 d
 e
 
-.EXAMPLE Changing the item and index variable name
+.EXAMPLE
 > for+ ('a'..'c') {"$u $p"} "u" "p"
 a 0
 b 1
 c 2
 
-.EXAMPLE Expanding the argument names for free order of arguments
+.EXAMPLE
 > For+ -ScriptBlock {$Item, $Index} -IndexVariableName "Index" -ItemVariableName "Item" -Array (1..4)
 1
 0
