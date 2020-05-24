@@ -7,17 +7,25 @@ The supplied script block can acces the current item using $x and the current in
 .PARAMETER Array
 The array to iterate through.
 
+Aliases: list, l, a
+
 .PARAMETER ScriptBlock
 The script block that is executed for each item in the array.
 By default, use $x to refer to the current item and $i to refer to that item's index.
+
+Aliases: function, f, script, s
 
 .PARAMETER ItemVariableName
 The variable name that the current item is bound to.
 Use this if you don't want to use $x for the item in your scriptblock.
 
+Aliases: x, v1
+
 .PARAMETER IndexVariableName
 The variable name that the current index is bound to.
 Use this if you don't want to use $i for the item's index in your scriptblock.
+
+Aliases: i, v2
 
 .INPUTS
 None
@@ -82,7 +90,7 @@ function For+ {
         [Object[]]
         $Array,
 
-        [Alias("Function", "f", "s")]
+        [Alias("Function", "f", "script", "s")]
         [Parameter(
             Mandatory,
             Position = 1
