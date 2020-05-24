@@ -6,6 +6,7 @@ The supplied script block can acces the current item using $x and the current in
 
 .PARAMETER Array
 The array to iterate through.
+
 .PARAMETER ScriptBlock
 The script block that is executed for each item in the array.
 By default, use $x to refer to the current item and $i to refer to that item's index.
@@ -20,6 +21,7 @@ Use this if you don't want to use $i for the item's index in your scriptblock.
 
 .INPUTS
 None
+
 .OUTPUTS
 Whatever the supplied script block outputs.
 
@@ -35,6 +37,7 @@ Whatever the supplied script block outputs.
 
 b
 cc
+
 .EXAMPLE
 > for+ ((1,2),(3,4)) {$x[$i]}
 1
@@ -71,6 +74,7 @@ https://github.com/schuelermine/pwsh-utils
 
 function For+ {    
     param(
+        [Alias("List", "l", "a")]
         [Parameter(
             Mandatory,
             Position = 0
@@ -78,6 +82,7 @@ function For+ {
         [Object[]]
         $Array,
 
+        [Alias("Function", "f", "s")]
         [Parameter(
             Mandatory,
             Position = 1
@@ -85,7 +90,7 @@ function For+ {
         [ScriptBlock]
         $ScriptBlock,
         
-        [Alias("Item", "x")]
+        [Alias("Item", "x", "v1")]
         [PSDefaultValue(
             Help = "x",
             Value = "x"
@@ -96,7 +101,7 @@ function For+ {
         [String]
         $ItemVariableName = "x",
         
-        [Alias("Index", "i")]
+        [Alias("Index", "i", "v2")]
         [PSDefaultValue(
             Help = "i",
             Value = "i"
