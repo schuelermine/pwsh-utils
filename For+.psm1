@@ -16,13 +16,13 @@ By default, use $x to refer to the current item and $i to refer to that item's i
 Aliases: Function, f, Script, s
 
 .PARAMETER ItemVariableName
-The variable name that the current item is bound to.
+The variable name that the current item will be bound to.
 Use this if you don't want to use $x for the item in your scriptblock.
 
 Aliases: Item, x, v1
 
 .PARAMETER IndexVariableName
-The variable name that the current index is bound to.
+The variable name that the current index will be bound to.
 Use this if you don't want to use $i for the item's index in your scriptblock.
 
 Aliases: Index, i, v2
