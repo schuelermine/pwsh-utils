@@ -46,7 +46,7 @@ function Get-ShortCommands {
             }
         }
 
-        $ShortName = 
+        $ShortName =
             Join-String* @($ShortVerb, $ShortNoun) "-"
 
         Write-Debug "Short name:"
