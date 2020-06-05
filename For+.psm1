@@ -3,36 +3,29 @@
 For+ acts as a python-esque alternative to PowerShell for syntax.
 In contrast to foreach, for+ allows access to the current index and the current item.
 The supplied script block can acces the current item using $x and the current index using $i (customizable).
-
 .PARAMETER Array
 The array to iterate through.
 
-Aliases: list, l, a
-
+Aliases: List, l, a
 .PARAMETER ScriptBlock
 The script block that is executed for each item in the array.
 By default, use $x to refer to the current item and $i to refer to that item's index.
 
-Aliases: function, f, script, s
-
+Aliases: Function, f, Script, s
 .PARAMETER ItemVariableName
-The variable name that the current item is bound to.
+The variable name that the current item will be bound to.
 Use this if you don't want to use $x for the item in your scriptblock.
 
-Aliases: x, v1
-
+Aliases: Item, x, v1
 .PARAMETER IndexVariableName
-The variable name that the current index is bound to.
+The variable name that the current index will be bound to.
 Use this if you don't want to use $i for the item's index in your scriptblock.
 
-Aliases: i, v2
-
+Aliases: Index, i, v2
 .INPUTS
 None
-
 .OUTPUTS
 Whatever the supplied script block outputs.
-
 .EXAMPLE
 > for+ (1..5) {$x - 1}
 0
@@ -45,12 +38,10 @@ Whatever the supplied script block outputs.
 
 b
 cc
-
 .EXAMPLE
 > for+ ((1,2),(3,4)) {$x[$i]}
 1
 4
-
 .EXAMPLE
 > for+ (,('a'..'e')*5) {$x[$i]}
 a
@@ -58,13 +49,11 @@ b
 c
 d
 e
-
 .EXAMPLE
 > for+ ('a'..'c') {"$u $p"} "u" "p"
 a 0
 b 1
 c 2
-
 .EXAMPLE
 > For+ -ScriptBlock {$Item, $Index} -IndexVariableName "Index" -ItemVariableName "Item" -Array (1..4)
 1
@@ -75,7 +64,6 @@ c 2
 2
 4
 3
-
 .LINK
 https://github.com/schuelermine/pwsh-utils
 #>
@@ -90,7 +78,7 @@ function For+ {
         [Object[]]
         $Array,
 
-        [Alias("Function", "f", "script", "s")]
+        [Alias("Function", "f", "Script", "s")]
         [Parameter(
             Mandatory,
             Position = 1
