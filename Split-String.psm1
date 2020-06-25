@@ -1,7 +1,7 @@
 function Split-String {
     param(
         [String]$String,
-        [UInt64]$LineLength
+        [UInt64]$SegmentLength
     )
 
     $Length = $String.Length
@@ -10,7 +10,7 @@ function Split-String {
     $Index = 0
 
     while ($Index -lt $Length) {
-        $NextIndex = $Index + $LineLength - 1
+        $NextIndex = $Index + $SegmentLength - 1
         
         $String[$Index..$NextIndex] -join ""
 
